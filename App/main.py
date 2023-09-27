@@ -24,7 +24,7 @@ def middleware():
 def root():
     if middleware():
          headers = {"Cache-Control": "no-cache"}  
-         return JSONResponse(content={"message":"connected"},headers=headers)
+         return JSONResponse(content={}, headers=headers)
         
     else:
          raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=f"Bad connection")
